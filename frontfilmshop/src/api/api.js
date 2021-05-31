@@ -11,4 +11,13 @@ function sendRequest(address, endpoint, method, body, headers) {
         data: body
     })
 }
-export default
+export function getAllFilms(){
+    return sendRequest(
+        backendAddress,
+        'films',
+        'get',
+        {},
+        {}
+    )
+
+}

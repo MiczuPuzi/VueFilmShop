@@ -19,6 +19,9 @@ export default {
   data: () => ({
 
   }),
+  mounted() {
+    this.$store.dispatch('fetchFilms').catch(error => alert(error.response.data))
+  }
 };
 </script>
 
