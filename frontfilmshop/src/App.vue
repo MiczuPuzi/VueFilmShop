@@ -4,6 +4,7 @@
       <div class="choosePanel">
         <router-link class="link" to="/films">Filmy</router-link>
         <router-link class="link" to="/home">Strona główna</router-link>
+        <router-link class="link" to="/login">Zaloguj</router-link>
       </div>
       <router-view></router-view>
     </div>
@@ -36,7 +37,11 @@ export default {
 
 .link {
   margin-right: 50px;
-
+  background: whitesmoke;
+  color: white;
+}
+a{
+  color: white;
 }
 
 </style>
