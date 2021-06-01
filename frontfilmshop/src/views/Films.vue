@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-items-stretch flex-wrap">
     <v-row>
-      <v-col class="ma" cols="4" v-for="film in films" :key="film.id">
+      <v-col cols="4" v-for="film in films" :key="film.id">
         <film-card :film="film"/>
       </v-col>
     </v-row>
@@ -20,8 +20,7 @@ export default {
     films() {
       return this.$store.getters.getFilms
     }
-  },
-
+  }
 }
 </script>
 

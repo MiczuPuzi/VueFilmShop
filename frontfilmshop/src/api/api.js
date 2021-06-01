@@ -21,3 +21,12 @@ export function getAllFilms(){
     )
 
 }
+export function getAllOpinions(){
+    return sendRequest(
+        backendAddress,
+        'opinions',
+        'get',
+        {},
+        {}
+    )
+}

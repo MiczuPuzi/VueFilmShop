@@ -2,6 +2,7 @@
   <v-app>
     <div>
       <div class="choosePanel">
+        <router-link class="link" to="/opinions">Komentarze</router-link>
         <router-link class="link" to="/films">Filmy</router-link>
         <router-link class="link" to="/home">Strona główna</router-link>
         <router-link class="link" to="/login">Zaloguj</router-link>
