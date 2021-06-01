@@ -6,6 +6,7 @@
         <router-link class="link" to="/films">Filmy</router-link>
         <router-link class="link" to="/home">Strona główna</router-link>
         <router-link class="link" to="/login">Zaloguj</router-link>
+        <router-link class="link" to="/register">Rejestracja</router-link>
       </div>
       <router-view></router-view>
     </div>

@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Films from '../views/Films.vue';
 import Login from '../views/Login.vue';
 import Opinions from "../views/Opinions.vue";
+import Register from "../views/Register";
 
 Vue.use(VueRouter)
 
@@ -28,6 +29,11 @@ const routes = [
         path: '/opinions',
         name: 'Opinions',
         component: Opinions
+    },
+    {
+        path: '/register',
+        name: 'Register',
+        component: Register
     }
 
 ]
