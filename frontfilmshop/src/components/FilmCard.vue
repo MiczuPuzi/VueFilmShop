@@ -2,11 +2,12 @@
   <v-container>
     <v-slide-x-transition>
     <v-card color="grey darken-1">
-      <v-card-title>{{film.title}}</v-card-title>
-      <v-card-subtitle>{{film.directorName}}</v-card-subtitle>
-      <v-card-text>{{film.price}}</v-card-text>
+      <v-card-title class="white--text justify-center">{{film.title}}</v-card-title>
+      <v-card-subtitle class="white--text">Reżyser: {{film.directorName}}</v-card-subtitle>
+      <v-card-text class="white--text">Cena: {{film.price}}</v-card-text>
+      <v-card-text class="white--text">{{film.description}}</v-card-text>
+      <v-btn class="float-right">Dodaj do koszyka</v-btn>
     </v-card>
-      <v-btn>Dodaj do koszyka</v-btn>
     </v-slide-x-transition>
   </v-container>
 </template>

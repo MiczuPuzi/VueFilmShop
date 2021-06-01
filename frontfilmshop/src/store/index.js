@@ -15,10 +15,8 @@ export default new Vuex.Store({
     },
     actions: {
         fetchFilms(context) {
-            console.log("Prawda")
             return getAllFilms()
                 .then(response => {
-                    console.log("111")
                     context.commit("setFilms", response.data)
                 })
         }

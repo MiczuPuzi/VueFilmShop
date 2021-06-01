@@ -1,7 +1,10 @@
 <template>
   <div class="d-flex align-items-stretch flex-wrap">
-    <h1>123123</h1>
-    <film-card v-for="film in films" :key="film.id" :film="film"/>
+    <v-row>
+      <v-col class="ma" cols="4" v-for="film in films" :key="film.id">
+        <film-card :film="film"/>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
