@@ -5,8 +5,6 @@
         <router-link class="link" to="/opinions">Komentarze</router-link>
         <router-link class="link" to="/films">Filmy</router-link>
         <router-link class="link" to="/home">Strona główna</router-link>
-        <router-link class="link" to="/login">Zaloguj</router-link>
-        <router-link class="link" to="/register">Rejestracja</router-link>
       </div>
       <router-view></router-view>
     </div>
@@ -23,6 +21,7 @@ export default {
   }),
   mounted() {
     this.$store.dispatch('fetchFilms').catch(error => alert(error.response.data))
+    this.$store.dispatch('fetchOpinions').catch(error => alert(error.response.data))
   }
 };
 </script>
@@ -42,8 +41,6 @@ export default {
 
 .link {
   margin-right: 50px;
-  background: whitesmoke;
-  color: white;
 }
 a{
   color: white;

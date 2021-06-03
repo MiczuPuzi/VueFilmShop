@@ -1,11 +1,11 @@
 <template>
-  <div class="d-flex align-items-stretch flex-wrap">
+  <v-container class="d-flex align-items-stretch flex-wrap">
     <v-row>
       <v-col cols="4" v-for="film in films" :key="film.id">
         <film-card :film="film"/>
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>
