@@ -1,24 +1,18 @@
 <template>
   <v-app>
-    <div>
-      <div class="choosePanel">
-        <router-link class="link" to="/opinions">Komentarze</router-link>
-        <router-link class="link" to="/films">Filmy</router-link>
-        <router-link class="link" to="/home">Strona główna</router-link>
-      </div>
-      <router-view></router-view>
-    </div>
+    <navigation-bar/>
+    <router-view></router-view>
   </v-app>
 </template>
 
 <script>
 
+import NavigationBar from "./components/NavigationBar";
+
 export default {
   name: 'App',
-
-  data: () => ({
-
-  }),
+  components: {NavigationBar},
+  data: () => ({}),
   mounted() {
     this.$store.dispatch('fetchFilms').catch(error => alert(error.response.data))
     this.$store.dispatch('fetchOpinions').catch(error => alert(error.response.data))
@@ -42,7 +36,8 @@ export default {
 .link {
   margin-right: 50px;
 }
-a{
+
+a {
   color: white;
 }
 

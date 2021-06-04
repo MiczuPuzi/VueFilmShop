@@ -7,7 +7,7 @@
       <v-card-text class="white--text">{{ film.description }}</v-card-text>
       <v-card-actions class="class-actions">
         <v-btn class="">Dodaj do koszyka</v-btn>
-        <add-opinion-dialog/>
+        <add-opinion-dialog :film-title="film.title" />
       </v-card-actions>
     </v-card>
   </v-container>
@@ -22,11 +22,6 @@ export default {
   components: {
     AddOpinionDialog
   },
-  computed: {
-    getFilmTitle(){
-      return this.film.title()
-    }
-  }
 }
 
 
