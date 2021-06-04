@@ -1,6 +1,4 @@
 <template>
-  <div id="app">
-    <v-app>
       <v-dialog v-model="dialog" persistent max-width="600px" min-width="360px">
         <div>
           <v-tabs v-model="tab" show-arrows background-color="deep-purple accent-4" icons-and-text dark grow>
@@ -60,8 +58,6 @@
           </v-tabs>
         </div>
       </v-dialog>
-    </v-app>
-  </div>
 </template>
 
 

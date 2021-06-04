@@ -1,16 +1,5 @@
 <template>
   <v-container class="d-flex align-items-stretch flex-wrap">
-        <v-btn
-            class="mx-2"
-            fab
-            dark
-            color="indigo"
-            v-on="on"
-        >
-          <v-icon  dark>
-            mdi-plus
-          </v-icon>
-        </v-btn>
     <v-row>
       <v-col cols="4" v-for="opinion in opinions" :key="opinion.id">
         <opinion-card :opinion="opinion"/>

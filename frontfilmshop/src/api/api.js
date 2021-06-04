@@ -11,7 +11,8 @@ function sendRequest(address, endpoint, method, body, headers) {
         data: body
     })
 }
-export function getAllFilms(){
+
+export function getAllFilms() {
     return sendRequest(
         backendAddress,
         'films',
@@ -21,12 +22,23 @@ export function getAllFilms(){
     )
 
 }
-export function getAllOpinions(){
+
+export function getAllOpinions() {
     return sendRequest(
         backendAddress,
         'opinions',
         'get',
         {},
+        {}
+    )
+}
+
+export function createOpinion(opinion) {
+    return sendRequest(
+        backendAddress,
+        'opinions',
+        'post',
+        opinion,
         {}
     )
 }
