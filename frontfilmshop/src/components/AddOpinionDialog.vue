@@ -53,13 +53,13 @@ export default {
   },
   methods: {
     addOpinion(){
-      createOpinion(this.newOpinion)
-      this.dialog = false;
-      this.newOpinion.rate = ''
-      this.newOpinion.description = ''
+      createOpinion(this.newOpinion).then(response => {
+        this.$store.dispatch('fetchOpinions', response.data).catch(error => alert(error.response.data))})
+        this.dialog = false;
+        this.newOpinion.rate = ''
+        this.newOpinion.description = ''
     }
   }
-
 }
 </script>
 

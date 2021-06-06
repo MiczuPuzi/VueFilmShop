@@ -42,3 +42,13 @@ export function createOpinion(opinion) {
         {}
     )
 }
+
+export function deleteOpinion(opinionId){
+    return sendRequest(
+        backendAddress,
+        'opinions/' + opinionId,
+        'delete',
+        {},
+        {}
+    )
+}

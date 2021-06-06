@@ -7,7 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         films: [],
-        opinions: []
+        opinions: [],
     },
     mutations: {
         setFilms(state, films) {
@@ -15,7 +15,7 @@ export default new Vuex.Store({
         },
         setOpinions(state,opinions){
             state.opinions = opinions
-        }
+        },
     },
     actions: {
         fetchFilms(context) {
@@ -29,8 +29,7 @@ export default new Vuex.Store({
                 .then(response => {
                     context.commit("setOpinions", response.data)
                 })
-        }
-
+        },
     },
     getters: {
         getFilms(state) {
@@ -38,6 +37,6 @@ export default new Vuex.Store({
         },
         getOpinions(state){
             return state.opinions
-        }
+        },
     }
 })

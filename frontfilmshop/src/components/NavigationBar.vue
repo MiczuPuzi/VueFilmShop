@@ -14,7 +14,7 @@ export default {
 
 <style scoped>
 .v-btn{
-  margin: 15px;
+  margin: 5px 15px 15px;
   position: center;
 }
 

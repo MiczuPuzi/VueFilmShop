@@ -27,18 +27,4 @@ export default {
   background-size: cover;
 }
 
-.choosePanel {
-  padding: 10px;
-  text-align: center;
-  font-size: 30px;
-}
-
-.link {
-  margin-right: 50px;
-}
-
-a {
-  color: white;
-}
-
 </style>

@@ -15,14 +15,13 @@ import OpinionCard from "../components/OpinionCard";
 export default {
   name: "Opinions",
   components: {
-
     OpinionCard
   },
   computed: {
     opinions() {
       return this.$store.getters.getOpinions
     }
-  }
+  },
 }
 </script>
 
