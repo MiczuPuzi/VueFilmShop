@@ -3,10 +3,10 @@
     <v-card color="grey darken-1" style="min-height: 300px">
       <v-card-title class="white--text justify-center">{{ film.title }}</v-card-title>
       <v-card-subtitle class="white--text">Reżyser: {{ film.directorName }}</v-card-subtitle>
-      <v-card-text class="white--text">Cena: {{ film.price }}</v-card-text>
+      <v-card-text class="white--text">Cena: {{ film.price }}zł</v-card-text>
       <v-card-text class="white--text">{{ film.description }}</v-card-text>
       <v-card-actions class="class-actions">
-        <v-btn class="">Dodaj do koszyka</v-btn>
+        <v-btn v-on:click="addFilmToCard(film)">Dodaj do koszyka</v-btn>
         <add-opinion-dialog :film-title="film.title" />
       </v-card-actions>
     </v-card>
@@ -22,6 +22,11 @@ export default {
   components: {
     AddOpinionDialog
   },
+  methods: {
+    addFilmToCard(film){
+      this.$store.commit('addToCard', film)
+    }
+  }
 }
 
 

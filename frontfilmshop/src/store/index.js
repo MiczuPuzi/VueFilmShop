@@ -8,13 +8,25 @@ export default new Vuex.Store({
     state: {
         films: [],
         opinions: [],
+        cart: [],
     },
     mutations: {
         setFilms(state, films) {
             state.films = films
         },
-        setOpinions(state,opinions){
+        setOpinions(state, opinions) {
             state.opinions = opinions
+        },
+        addToCard(state, film) {
+            for (const f of state.cart) {
+                if (f.title === film.title &&
+                    f.price === film.price &&
+                    f.description === film.description &&
+                    f.directorName === film.directorName) {
+                    return null;
+                }
+            }
+            state.cart.push(film)
         },
     },
     actions: {
@@ -35,8 +47,11 @@ export default new Vuex.Store({
         getFilms(state) {
             return state.films
         },
-        getOpinions(state){
+        getOpinions(state) {
             return state.opinions
+        },
+        getCardElements(state) {
+            return state.cart
         },
     }
 })

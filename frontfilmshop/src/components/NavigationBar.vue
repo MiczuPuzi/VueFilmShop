@@ -3,19 +3,22 @@
   <v-btn class="align-center" to="/films">Filmy</v-btn>
   <v-btn to="/opinions">Komentarze</v-btn>
   <v-btn to="/home">Strona główna</v-btn>
+  <shop-basket/>
 </v-app-bar>
 </template>
 
 <script>
+import ShopBasket from "./ShopBasket";
 export default {
-  name: "NavigationBar"
+  name: "NavigationBar",
+  components: {ShopBasket}
 }
 </script>
 
 <style scoped>
 .v-btn{
   margin: 5px 15px 15px;
-  position: center;
+
 }
 
 </style>
