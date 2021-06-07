@@ -28,6 +28,12 @@ export default new Vuex.Store({
             }
             state.cart.push(film)
         },
+        removeFromCard(state,film){
+            state.cart = state.cart.filter(f => f.title !== film.title &&
+                f.price !== film.price &&
+                f.description !== film.description &&
+                f.directorName !== film.directorName)
+        }
     },
     actions: {
         fetchFilms(context) {
