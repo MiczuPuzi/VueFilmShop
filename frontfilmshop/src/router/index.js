@@ -12,12 +12,12 @@ const routes = [
         path: '/home',
         alias: ['/', ''],
         name: 'Home',
-        component: Home
+        component: Home,
     },
     {
         path: '/films',
         name: 'Films',
-        component: Films
+        component: Films,
     },
     {
         path: '/login',

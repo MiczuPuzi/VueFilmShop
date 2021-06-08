@@ -52,7 +52,7 @@
                           block
                           :disabled="!valid"
                           color="success"
-                          @click="validate"
+                          @click="loginUser"
                       >
                         Login
                       </v-btn>
@@ -137,7 +137,7 @@
 </template>
 
 <script>
-import {registerUser} from '../api/api'
+import {loginUser, registerUser} from '../api/api'
 
 export default {
   name: 'Login',
@@ -149,17 +149,6 @@ export default {
   },
 
   methods: {
-    validate() {
-      if (this.$refs.loginForm.validate()) {
-        return true
-      }
-    },
-    reset() {
-      this.$refs.form.reset()
-    },
-    resetValidation() {
-      this.$refs.form.resetValidation()
-    },
     registerNewUser() {
       registerUser(this.email, this.password)
           .then(() => {
@@ -175,6 +164,18 @@ export default {
       this.dialog = false
       this.loading = true
     },
+    loginUser() {
+      loginUser(this.loginEmail, this.loginPassword)
+          .then((res) => {
+            console.log(res)
+            localStorage.setItem('auth-token', res.data.token)
+            localStorage.setItem('email', res.data.email)
+            this.$store.commit('setToken', res.data.token)
+            this.$store.commit('setLoggedEmail', res.data.email)
+            this.$router.replace('/films')
+          })
+          .catch(error => alert(error.response.data))
+    }
   },
   data: () => ({
     register: false,

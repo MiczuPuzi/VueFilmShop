@@ -16,6 +16,8 @@ export default {
   mounted() {
     this.$store.dispatch('fetchFilms').catch(error => alert(error.response.data))
     this.$store.dispatch('fetchOpinions').catch(error => alert(error.response.data))
+    this.$store.commit('setToken', localStorage.getItem('auth-token'))
+    this.$store.commit('setLoggedEmail',localStorage.getItem('email'))
   }
 };
 </script>

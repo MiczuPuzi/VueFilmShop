@@ -9,6 +9,8 @@ export default new Vuex.Store({
         films: [],
         opinions: [],
         cart: [],
+        authToken: '',
+        loggedEmail: '',
     },
     mutations: {
         setFilms(state, films) {
@@ -29,10 +31,13 @@ export default new Vuex.Store({
             state.cart.push(film)
         },
         removeFromCard(state,film){
-            state.cart = state.cart.filter(f => f.title !== film.title &&
-                f.price !== film.price &&
-                f.description !== film.description &&
-                f.directorName !== film.directorName)
+            state.cart = state.cart.filter(f => f._id !== film._id)
+        },
+        setToken(state, token){
+            state.authToken = token
+        },
+        setLoggedEmail(state,email){
+            state.loggedEmail = email
         }
     },
     actions: {
@@ -59,5 +64,13 @@ export default new Vuex.Store({
         getCardElements(state) {
             return state.cart
         },
+        getToken(state){
+            if (!state.authToken)
+            return state.authToken
+            else return false
+        },
+        getLoggedEmail(state){
+            return state.loggedEmail
+        }
     }
 })

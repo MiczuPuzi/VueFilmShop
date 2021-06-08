@@ -7,7 +7,7 @@
       </v-row>
       <v-row class="justify-center">
           <v-col cols="12">
-              <v-card color="blue-grey lighten-2" @click="register">
+              <v-card v-if="!this.$store.state.authToken" color="blue-grey lighten-2" @click="register">
                   <v-card-title class="justify-center" >Logowanie/Rejestracja</v-card-title>
               </v-card>
           </v-col>
