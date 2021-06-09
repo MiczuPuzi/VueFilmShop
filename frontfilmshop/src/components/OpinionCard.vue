@@ -5,7 +5,7 @@
       <v-card-subtitle>Ocena: {{ opinion.rate }}</v-card-subtitle>
       <v-card-text>Opis: {{ opinion.description }}</v-card-text>
       <v-card-actions class="justify-end">
-        <v-btn v-on:click="deleteOpinion(opinion._id)">
+        <v-btn v-if="this.$store.state.admin" v-on:click="deleteOpinion(opinion._id)">
           <v-icon>
             mdi-delete
           </v-icon>

@@ -43,9 +43,6 @@
                     </v-col>
                     <v-col class="d-flex" cols="12" sm="6" xsm="12"></v-col>
                     <v-spacer></v-spacer>
-                    <v-col>
-                      <v-btn x-large color="success" to="/home">Back</v-btn>
-                    </v-col>
                     <v-col class="d-flex" cols="12" sm="3" xsm="12" align-end>
                       <v-btn
                           x-large
@@ -161,7 +158,6 @@ export default {
             this.register = true
             this.registerSuccess = false
           })
-      this.dialog = false
       this.loading = true
     },
     loginUser() {
@@ -172,6 +168,7 @@ export default {
             localStorage.setItem('email', res.data.email)
             this.$store.commit('setToken', res.data.token)
             this.$store.commit('setLoggedEmail', res.data.email)
+            this.$store.commit('adminLogged', localStorage.getItem('email'))
             this.$router.replace('/films')
           })
           .catch(error => alert(error.response.data))

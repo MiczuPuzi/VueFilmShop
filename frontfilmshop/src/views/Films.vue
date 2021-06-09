@@ -1,7 +1,7 @@
 <template>
   <v-container class="d-flex align-items-stretch flex-wrap">
-    <v-row>
-      <v-col cols="4" v-for="film in films" :key="film.id">
+    <v-row class="justify-center">
+      <v-col cols="12" sm="10" md="6" lg="4" v-for="film in films" :key="film.id">
         <film-card :film="film"/>
       </v-col>
     </v-row>

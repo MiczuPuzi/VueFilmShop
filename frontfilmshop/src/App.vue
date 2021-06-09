@@ -18,6 +18,7 @@ export default {
     this.$store.dispatch('fetchOpinions').catch(error => alert(error.response.data))
     this.$store.commit('setToken', localStorage.getItem('auth-token'))
     this.$store.commit('setLoggedEmail',localStorage.getItem('email'))
+    this.$store.commit('adminLogged', localStorage.getItem('email'))
   }
 };
 </script>

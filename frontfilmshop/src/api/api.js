@@ -41,3 +41,13 @@ export function registerUser(email, password) {
 export function loginUser(email, password) {
     return sendRequest(backendAddress, '/login', 'post', {email, password}, {})
 }
+
+export function sendEmail(email, films, totalPrice){
+    return sendRequest(
+        backendAddress,
+        'buy',
+        'post',
+        {email, films, totalPrice},
+        {}
+    )
+}

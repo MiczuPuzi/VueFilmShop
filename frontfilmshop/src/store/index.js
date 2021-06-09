@@ -11,6 +11,7 @@ export default new Vuex.Store({
         cart: [],
         authToken: '',
         loggedEmail: '',
+        admin: false
     },
     mutations: {
         setFilms(state, films) {
@@ -38,6 +39,9 @@ export default new Vuex.Store({
         },
         setLoggedEmail(state,email){
             state.loggedEmail = email
+        },
+        adminLogged(state, email){
+            state.admin = email === 'admin@wp.pl';
         }
     },
     actions: {
@@ -71,6 +75,9 @@ export default new Vuex.Store({
         },
         getLoggedEmail(state){
             return state.loggedEmail
+        },
+        isAdminLogged(state){
+            return state.admin
         }
     }
 })
