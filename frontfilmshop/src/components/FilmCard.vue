@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-card class="film-card" color="grey darken-1">
-      <v-card-title class="white--text justify-center">{{
-        film.title
-      }}</v-card-title>
+      <v-card-title class="white--text justify-center">{{film.title}}</v-card-title>
       <v-card-subtitle class="white--text"
         >Reżyser: {{ film.directorName }}</v-card-subtitle
       >

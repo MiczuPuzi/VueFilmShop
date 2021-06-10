@@ -1,16 +1,16 @@
 <template>
-  <v-dialog v-model="dialog" width="60%">
+  <v-dialog v-model="dialog" width="50%">
     <template v-slot:activator="{ on, attrs }">
       <v-btn
-        color="transparent"
-        style="margin: 5px 15px 15px auto"
-        v-on="on"
-        v-bind="attrs"
+          color="transparent"
+          style="margin: 5px 15px 15px auto"
+          v-on="on"
+          v-bind="attrs"
       >
         <v-badge
-          color="blue-grey darken-2"
-          :content="getNumberOfCardElements()"
-          :value="getNumberOfCardElements() > 0"
+            color="blue-grey darken-2"
+            :content="getNumberOfCardElements()"
+            :value="getNumberOfCardElements() > 0"
         >
           <v-icon color="green darken-1">
             mdi-cart
@@ -23,17 +23,18 @@
         <span>Cena ogólna: {{ getTotalPrice() }}zł</span>
         <v-spacer></v-spacer>
         <v-btn
-          width="10%"
-          style="position: center"
-          color="green darken-1"
-          @click="buyAndSendEmail"
-          >Kup</v-btn
+            width="10%"
+            style="position: center"
+            color="green darken-1"
+            @click="buyAndSendEmail"
+        >Kup
+        </v-btn
         >
       </v-toolbar>
       <div id="empty-cart" v-if="getNumberOfCardElements() === 0">
         <v-card-text>
           <h1 style="text-align: center">Twój Koszyk jest pusty</h1>
-          <br />
+          <br/>
         </v-card-text>
       </div>
       <div v-if="getNumberOfCardElements() > 0">
@@ -47,11 +48,11 @@
 
 <script>
 import Film from "./Film"
-import { sendEmail } from "../api/api"
+import {sendEmail} from "../api/api"
 
 export default {
   name: "ShopBasket",
-  components: { Film },
+  components: {Film},
   computed: {
     cart() {
       return this.$store.getters.getCardElements
@@ -72,12 +73,11 @@ export default {
       return Math.round(sum)
     },
     buyAndSendEmail() {
-      sendEmail(
-        this.$store.getters.getLoggedEmail,
-        this.cart,
-        this.getTotalPrice()
-      ).then(() => (this.dialog = false))
-      this.cart = []
+      if (this.cart !== []) {
+        sendEmail(this.$store.getters.getLoggedEmail, this.cart, this.getTotalPrice())
+            .then(() => (this.dialog = false))
+            .then(() => this.$store.state.cart = [])
+      }
     },
   },
 }

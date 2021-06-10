@@ -163,12 +163,12 @@ export default {
     loginUser() {
       loginUser(this.loginEmail, this.loginPassword)
           .then((res) => {
-            console.log(res)
             localStorage.setItem('auth-token', res.data.token)
             localStorage.setItem('email', res.data.email)
             this.$store.commit('setToken', res.data.token)
             this.$store.commit('setLoggedEmail', res.data.email)
             this.$store.commit('adminLogged', localStorage.getItem('email'))
+            this.$store.state.cart = [];
             this.$router.replace('/films')
           })
           .catch(error => alert(error.response.data))

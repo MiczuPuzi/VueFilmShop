@@ -1,9 +1,7 @@
 <template>
   <v-container>
     <v-card>
-      <v-card-title class="opinion-title justify-center">{{
-        opinion.filmTitle
-      }}</v-card-title>
+      <v-card-title class="opinion-title justify-center">{{opinion.filmTitle }}</v-card-title>
       <v-card-subtitle>Ocena: {{ opinion.rate }}</v-card-subtitle>
       <v-card-text>Opis: {{ opinion.description }}</v-card-text>
       <v-card-actions class="justify-end">
@@ -21,7 +19,7 @@
 </template>
 
 <script>
-import { deleteOpinion } from "../api/api"
+import { deleteOpinion } from "@/api/api"
 
 export default {
   name: "OpinionCard",
