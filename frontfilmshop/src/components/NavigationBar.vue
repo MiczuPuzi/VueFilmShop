@@ -5,10 +5,6 @@
       >Filmy
       </v-btn
       >
-      <v-btn v-if="this.$store.state.authToken" to="/opinions"
-      >Komentarze
-      </v-btn
-      >
       <v-btn v-if="this.$store.state.authToken" @click="logOutUser"
       >Wyloguj
       </v-btn
@@ -18,9 +14,7 @@
       <navigation-drawer/>
     </div>
     <shop-basket v-if="this.$store.state.authToken"/>
-    <span style="color: white; margin-bottom: 10px">{{
-        this.$store.getters.getLoggedEmail
-      }}</span>
+    <span style="color: white; margin-bottom: 10px">{{this.$store.getters.getLoggedEmail }}</span>
   </v-app-bar>
 </template>
 
@@ -28,9 +22,10 @@
 import NavigationDrawer from "./NavigationDrawer.vue"
 import ShopBasket from "./ShopBasket"
 
+
 export default {
   name: "NavigationBar",
-  components: {ShopBasket, NavigationDrawer},
+  components: { ShopBasket, NavigationDrawer},
   methods: {
     logOutUser() {
       localStorage.clear()

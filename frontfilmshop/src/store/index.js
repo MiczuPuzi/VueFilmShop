@@ -1,11 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import {getAllFilms, getAllOpinions} from "../api/api";
+import {getAllFilms, getAllOpinions} from "@/api/api";
+import createPersistedState from "vuex-persistedstate"
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
+    plugins: [createPersistedState({
+        storage: window.sessionStorage,
+    })],
     state: {
+        selectedFilm: {},
         films: [],
         opinions: [],
         cart: [],
@@ -14,6 +19,9 @@ export default new Vuex.Store({
         admin: false
     },
     mutations: {
+        setSelectedFilm(state, film){
+            state.selectedFilm = film
+        },
         setFilms(state, films) {
             state.films = films
         },
@@ -78,6 +86,9 @@ export default new Vuex.Store({
         },
         isAdminLogged(state){
             return state.admin
+        },
+        getSelectedFilm(state){
+            return state.selectedFilm
         }
     }
 })

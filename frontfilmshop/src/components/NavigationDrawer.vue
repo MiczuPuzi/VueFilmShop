@@ -1,7 +1,7 @@
 <template>
   <v-menu>
     <template v-slot:activator="{ on, attrs }">
-      <v-btn v-on="on" v-bind="attrs" class="toolbar-menu-btn">
+      <v-btn icon v-on="on" v-bind="attrs" class="toolbar-menu-btn">
         <v-icon>
           mdi-menu
         </v-icon>
@@ -9,11 +9,7 @@
     </template>
     <v-list class="nav-items" color="grey darken-1">
       <v-btn class="nav-btn" v-if="this.$store.state.authToken" to="/films"
-        >Filmy</v-btn
-      >
-      <v-btn class="nav-btn" v-if="this.$store.state.authToken" to="/opinions"
-        >Komentarze</v-btn
-      >
+        >Filmy</v-btn>
       <v-btn
         class="nav-btn"
         v-if="this.$store.state.authToken"

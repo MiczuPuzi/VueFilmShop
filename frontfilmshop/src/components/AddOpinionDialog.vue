@@ -20,14 +20,10 @@
         style="position: center"
         >{{ newOpinion.filmTitle }}</v-card-subtitle
       >
-      <v-select
-        dark
-        v-model="newOpinion.rate"
-        style="margin: 10px"
-        :items="rates"
-        label="Ocena"
-      >
-      </v-select>
+      <v-rating
+          v-model="newOpinion.rate"
+          hover
+      ></v-rating>
       <v-text-field
         dark
         label="Dodaj opinię"
@@ -42,7 +38,7 @@
 </template>
 
 <script>
-import { createOpinion } from "../api/api"
+import { createOpinion } from "@/api/api"
 
 export default {
   name: "AddOpinionDialog",

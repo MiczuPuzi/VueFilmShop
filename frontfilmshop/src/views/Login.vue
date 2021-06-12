@@ -134,7 +134,7 @@
 </template>
 
 <script>
-import {loginUser, registerUser} from '../api/api'
+import {loginUser, registerUser} from '@/api/api'
 
 export default {
   name: 'Login',

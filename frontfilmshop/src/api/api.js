@@ -16,6 +16,14 @@ export function getAllFilms() {
     return sendRequest(backendAddress, 'films', 'get', {}, {})
 }
 
+export function createFilm(film){
+    return sendRequest(backendAddress, 'films', 'post', film, {})
+}
+
+export function updateFilm(film, newFIlm){
+    return sendRequest(backendAddress, 'films/'+film._id, 'put', newFIlm, {})
+}
+
 export function getAllOpinions() {
     return sendRequest(backendAddress, 'opinions', 'get', {}, {})
 }
